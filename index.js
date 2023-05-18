@@ -82,6 +82,9 @@ async function run() {
 
     // booked data UPDATE starts
     app.put("/bookings/:id", async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const options = { upsert: true };
       const updatedBookings = req.body;
     });
     // booked data UPDATE end
